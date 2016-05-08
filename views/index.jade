@@ -1,32 +1,21 @@
-extends shared/layout
-
-block content
-  .row
-    form.col.s12(action="/" method="get")
-      .row
-        .input-field.col.s6
-          input(type="text" id="name" name="email" class="validate")
-          label(for="name") Name
-        .input-field.col.s6
-          input(type="password" id="password" name="password" class="validate")
-          label(for="lastName") Password
-        .input-field.col.s12
-          button(class="btn waves-effect waves-light" type="submit" id= "login") Login
-            i(class="material-icons right") send
-block script
-  script.
-    $("#login").click(function () {
-      var user_email = $("#email").val();
-      var password = $("#password").val();
-      //'http://52.205.251.33:9000/auth/local?email=test@example.com&password=test'
-      var url = "http://52.205.251.33:9000/auth/local%3Femail=" + email + "%26password=" + password;
-      console.log(url);
-      $.ajax ({
-        type: "POST",
-        url: url
-      }).success (function (data) {
-        console.log(data);
-      }).error (function (error){
-        console.log(error);
-      });
-    }); 
+html
+  head
+    include shared/css
+  body
+    .container
+      .section
+        .row
+          form.col.offset-s4.s4.login.center-align.hoverable(action="/" method="post")
+            .row
+              .input-field.center-align
+                input(type="text" id="username" name="username" class="validate")
+                label(for="username") Username
+            .row
+              .input-field.center-align
+                input(type="password" id="password" name="password" class="validate")
+                label(for="password") Password
+            .row
+              .input-field.center-align
+                button.red.lighten-1(class="btn waves-effect waves-light" type="submit" name="action") Login
+    script(src="/jquery/dist/jquery.min.js")
+    script(src="/Materialize/dist/js/materialize.min.js")

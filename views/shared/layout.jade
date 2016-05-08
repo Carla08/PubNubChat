@@ -1,17 +1,43 @@
 doctype html
 html
   head
-    title= "PubNub Chat Node.js"
-    link(rel='stylesheet', href='/Materialize/dist/css/materialize.min.css')
-    link(rel="stylesheet", href="/stylesheets/style.css")
-    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    title= "XMPP Chat Node.js"
+    include css
   body
-    .navbar-fixed
-      nav.light-green
-        .nav-wrapper
-          a(href="#" class="brand-logo ") BEST PubNub Chat
-    .section
-      block content
+    header
+      .navbar-fixed
+        nav.top-nav.teal.lighten-2
+          .nav-wrapper
+            a.left(href="#" class="brand-logo ") BEST XMPP Chat
+            ul.right.hide-on-med-and-down
+              li
+                a.btn.red.lighten-1.modal-trigger( href="#addFriend") Add Friend
+              li
+                a.btn.red.lighten-1(id="LogOff" href="/logoff") Close Chat
+              li
+                a.btn.red.lighten-1.modal-trigger(href= "#createGroup") Create Group
+      ul.side-nav.fixed.collection(id="contacts")
+        li.collection-header.center-align.teal.lighten-5
+          span.material-icons.small.teal-text.darken-1(style="font-size:4rem") contacts
+      a(href="#" data-activates="slide-out" class="button-collapse")
+        i(class="mdi-navigation-menu")
+
+    main
+      .container
+        .section
+          block content
     script(src="/jquery/dist/jquery.min.js")
     script(src="/Materialize/dist/js/materialize.min.js")
+    script(src="https://cdn.socket.io/socket.io-1.4.5.js")
+    //script(src="javascripts/app.js")
     block script
+    script.
+      $('.modal-trigger').leanModal({
+                dismissible: true, // Modal can be dismissed by clicking outside of the modal
+                opacity: .5, // Opacity of modal background
+                in_duration: 300, // Transition in duration
+                out_duration: 200 // Transition out duration
+
+              }
+      );
+

@@ -1,3 +1,46 @@
-a {
-  color: #00B7FF;
+header, main, footer {
+  padding-left: 240px;
 }
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+li.collection-header > span.material-icons{
+  color:#4db6ac;
+}
+form.chat { padding: 3px; position: fixed; bottom: 0; width: 100%; }
+
+ul.right.hide-on-med-and-down{
+  margin-right:240px;
+}
+
+
+.btn{
+  margin-right: 2px;
+}
+
+#friendRequest,
+#groupRequest {
+	max-width: 400px;
+	color: #FFF;
+	background-color: #555;
+}
+
+<<<<<<< HEAD
+
+.login{
+    margin-top: 6rem;
+    border-radius: 2px;
+}
+
+li.collection-item.avatar{
+    border-radius: 2px;
+    margin-top: 15px;
+}
+body,ul.side-nav.fixed.collection{
+    background-image: url("../images/congruent_pentagon.png");
+}
+=======
+>>>>>>> 64d96b6037333ce0510764ac7652fe54dfa3bd70
