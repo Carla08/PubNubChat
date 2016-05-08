@@ -1,0 +1,21 @@
+{
+  "name": "NodeXMPP",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Mario Contreras <mario.acc.15@gmail.com>",
+    "Carla Prieto <carlapchavez@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Carla08/NodePubNub",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#^0.97.6"
+  }
+}
